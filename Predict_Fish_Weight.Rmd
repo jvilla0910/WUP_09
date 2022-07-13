@@ -24,7 +24,7 @@ Roach = filter(Fish, Species == "Roach")
 ```
 
 # Predicting Fish Weight
-From this graph I see that the best two predictors of wt for perch are Lengtht3 and height
+From this graph I see that the best two predictors of wt for perch are Length and Height.
 
 ## Perch
 
@@ -124,4 +124,6 @@ Best model for this class is using all four variables.
 From the graph the best two-parameter regressor model is based on Length1 & Length3. 
 
 ## Final Summary Statements
+
  
+In conclusion, the best models for all 3 fish is using all 4 variables. The best two regressor model variables for perch is Length3 & Height. The best two regressor model variables for Pike is Length1 & Length3. The best two regressor model variables for Roach is Length 1 & Length3. 
