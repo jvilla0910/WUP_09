@@ -1,6 +1,6 @@
 ---
 title: "Weight of Fish"
-author: "Your Name"
+author: "Jessica Villa"
 date: "`r Sys.Date()`"  
 output: 
   html_document:
@@ -28,14 +28,20 @@ Roach = filter(Fish, Species == "Roach")
 pwt = lm(Weight~ Length1+ Length2, data = Perch)
 summary(pwt)
 ```
+```{r}
 
+```
 
+From this graph I see that the best two predictors of wt for perch are Lengtht3 and height
 ## Perch
 
 ### Best Models
 
+Best model for this class is using all four variables. 
+
 ### Best Two regressor model
 
+From the graph the best two-parameter regressor model is based on length3 and Height. 
 
 ## Pike
 
