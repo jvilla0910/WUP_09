@@ -24,16 +24,31 @@ Roach = filter(Fish, Species == "Roach")
 ```
 
 # Predicting Fish Weight
+From this graph I see that the best two predictors of wt for perch are Lengtht3 and height
+
+## Perch
+
 ```{r}
 pwt = lm(Weight~ Length1+ Length2, data = Perch)
 summary(pwt)
 ```
-```{r}
 
+```{r}
+library(leaps)
+regsubsets.out <-
+    regsubsets(Weight ~ Length1+ Length2 + Length3 + Height,
+               data = Perch,
+               nbest = 2,       # 1 best model for each number of predictors
+               nvmax = NULL,    # NULL for no limit on number of variables
+               force.in = NULL, force.out = NULL,
+               method = "exhaustive")
+regsubsets.out
 ```
 
-From this graph I see that the best two predictors of wt for perch are Lengtht3 and height
-## Perch
+```{r}
+summary.out <- summary(regsubsets.out)
+as.data.frame(summary.out$outmat)
+```
 
 ### Best Models
 
@@ -45,14 +60,68 @@ From the graph the best two-parameter regressor model is based on length3 and He
 
 ## Pike
 
+```{r}
+pwt = lm(Weight~ Length1+ Length2, data = Pike)
+summary(pwt)
+```
+
+```{r}
+library(leaps)
+regsubsets.out <-
+    regsubsets(Weight ~ Length1+ Length2 + Length3 + Height,
+               data = Pike,
+               nbest = 2,       # 1 best model for each number of predictors
+               nvmax = NULL,    # NULL for no limit on number of variables
+               force.in = NULL, force.out = NULL,
+               method = "exhaustive")
+regsubsets.out
+```
+
+```{r}
+summary.out <- summary(regsubsets.out)
+as.data.frame(summary.out$outmat)
+```
+
+
 ### Best Models
 
+Best model for this class is using all four variables. 
+
 ### Best Two regressor model
+
+From the graph the best two-parameter regressor model is based on Length1 & Length3. 
 
 ## Roach
 
+```{r}
+pwt = lm(Weight~ Length1+ Length2, data = Roach)
+summary(pwt)
+```
+
+```{r}
+library(leaps)
+regsubsets.out <-
+    regsubsets(Weight ~ Length1+ Length2 + Length3 + Height,
+               data = Roach,
+               nbest = 2,       # 1 best model for each number of predictors
+               nvmax = NULL,    # NULL for no limit on number of variables
+               force.in = NULL, force.out = NULL,
+               method = "exhaustive")
+regsubsets.out
+```
+
+```{r}
+summary.out <- summary(regsubsets.out)
+as.data.frame(summary.out$outmat)
+```
+
 ### Best Models
+
+Best model for this class is using all four variables. 
 
 ### Best Two regressor model
 
+From the graph the best two-parameter regressor model is based on Length1 & Length3. 
+
 ## Final Summary Statements
+ 
